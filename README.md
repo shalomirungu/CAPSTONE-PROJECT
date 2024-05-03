@@ -48,12 +48,39 @@ We performed domain feature engineering and  we did subplots to visualize the di
 
 **CatBoostClassifier**: The CatBoostClassifier has an accuracy of 0.847826 and log loss of 0.420255.
 
-We decided to dig deeper into  the LGBMClassifier and CatBoostClassifier since they had the highest accuracies to determine their precision, accuracy, recall, f1 score. We also did confusion matrices for them.
+We also did confusion matrices for them. According to the results, the LGBMClassifier achieved the highest accuracy of 0.859, closely followed by the CatBoostClassifier with an accuracy of 0.848. However, considering both accuracy and log loss, it's noteworthy that the CatBoostClassifier attained the lowest log loss of 0.420 among all models. We decided to dig deeper into  the Logistic regression model, LGBMClassifier and CatBoostClassifier since they had the highest accuracies to determine their precision, accuracy, recall, f1 score.
+
+
+
+Examining the confusion matrices across the three classifications, we observe varying degrees of mislabeled posts. The MultinomialNB shows the highest number of mislabeled posts at 131, followed by 93 in LogisticRegression, and finally, 75 under CatBoostClassifier. This indicates disparities in the models' abilities to accurately classify instances, with MultinomialNB exhibiting the greatest challenge in correctly labeling posts.
+
+* **The Logistic regression model** has Precision of 0.836954, Recall of 0.836957, F1-Score of 0.835880, and Accuracy of 0.836957.
+* **MultinomialNB** has Precision of 0.848309, Recall of 0.821429, F1-Score of 0.823609 and Accuracy of 0.821429.
+* **CatBoostClassifier** has Precision of 0.851815, Recall of 0.847826, F1-Score of 0.849121 and Accuracy of 0.847826.
+
+While MultinomialNB exhibits a lower recall, indicating potential limitations in capturing all positive instances, CatBoostClassifier stands out with its high precision, showcasing its proficiency in making accurate positive predictions while minimizing false positives. We performed Stacking to combine multiple classification or regression models via a meta-classifier or meta-regressor.
+
+Rare classes like Burudani and Kimataifa in the dataset pose challenges for the model in correctly classifying instances belonging to these classes. Consequently, the confusion matrix below shows lower values for true positives for these rare classes.
 
 
 
 
-  ## Conclusion and Recommendations 
+
+On the stacking model, we achieved an accuracy of 0.8524, implying that approximately 85.24% of the model's predictions were correct. Additionally, with a log loss of 0.3984, it suggests that the model's predictions are closely aligned with the actual probabilities.
+
+## Conclusion
+Upon examining the confusion matrix, the model exhibits robustness in its predictions, effectively capturing the underlying patterns and features of the data. There are no instances of mislabeled posts, indicating consistent and precise predictions across all classes. This reliability suggests that the model can be trusted for accurate classifications. Given its strong performance, the model may be suitable for deployment in real-world applications where accurate classification is crucial.
+
+While the absence of mislabeled posts is encouraging, further analysis is warranted to ensure the model's robustness across diverse datasets or conditions and to identify any potential biases or limitations.
+
+
+
+
+
+
+
+
+  ## Recommendations 
 
 
 
