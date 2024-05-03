@@ -58,7 +58,7 @@ Examining the confusion matrices across the three classifications, we observe va
 * **MultinomialNB** has Precision of 0.848309, Recall of 0.821429, F1-Score of 0.823609 and Accuracy of 0.821429.
 * **CatBoostClassifier** has Precision of 0.851815, Recall of 0.847826, F1-Score of 0.849121 and Accuracy of 0.847826.
 
-While MultinomialNB exhibits a lower recall, indicating potential limitations in capturing all positive instances, CatBoostClassifier stands out with its high precision, showcasing its proficiency in making accurate positive predictions while minimizing false positives. We performed Stacking to combine multiple classification or regression models via a meta-classifier or meta-regressor.
+While MultinomialNB exhibits a lower recall, indicating potential limitations in capturing all positive instances, CatBoostClassifier stands out with its high precision, showcasing its proficiency in making accurate positive predictions while minimizing false positives. We did a Stacking Classifier to combine multiple classification or regression models via a meta-classifier or meta-regressor.
 
 Rare classes like Burudani and Kimataifa in the dataset pose challenges for the model in correctly classifying instances belonging to these classes. Consequently, the confusion matrix below shows lower values for true positives for these rare classes.
 
